@@ -1,0 +1,340 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+  {
+    category: "Comprendre",
+    tag: "Fondamentaux",
+    title: "Périménopause : les premiers signes à ne pas ignorer",
+    excerpt: "La transition vers la ménopause peut commencer dès 40 ans. Découvrez les signaux d'alerte et comment les distinguer d'autres causes.",
+    readTime: "6 min",
+    date: "15 avril 2026",
+    color: "#e8d0d7",
+  },
+  {
+    category: "Traitements",
+    tag: "THM",
+    title: "Traitement hormonal de la ménopause : bénéfices et risques expliqués",
+    excerpt: "Le THM reste le traitement le plus efficace, mais suscite des inquiétudes. Voici ce que dit vraiment la science en 2026.",
+    readTime: "9 min",
+    date: "2 avril 2026",
+    color: "#ddd0e8",
+  },
+  {
+    category: "Bien-être",
+    tag: "Alimentation",
+    title: "Alimentation et ménopause : les aliments qui font vraiment la différence",
+    excerpt: "Phyto-estrogènes, calcium, oméga-3 : quels aliments privilégier et lesquels éviter pendant et après la ménopause.",
+    readTime: "7 min",
+    date: "20 mars 2026",
+    color: "#d0e8d5",
+  },
+  {
+    category: "Santé",
+    tag: "Ostéoporose",
+    title: "Protéger ses os après la ménopause : un guide complet",
+    excerpt: "La densité osseuse chute rapidement après la ménopause. Activité physique, nutrition et traitements pour prévenir l'ostéoporose.",
+    readTime: "8 min",
+    date: "10 mars 2026",
+    color: "#e8e0d0",
+  },
+  {
+    category: "Bien-être",
+    tag: "Sommeil",
+    title: "Retrouver un sommeil réparateur : stratégies contre les nuits difficiles",
+    excerpt: "Sueurs nocturnes, insomnies, réveils à 3h du matin... Des solutions concrètes pour enfin dormir.",
+    readTime: "5 min",
+    date: "1 mars 2026",
+    color: "#d0dde8",
+  },
+  {
+    category: "Sexualité",
+    tag: "Intimité",
+    title: "Vie intime après la ménopause : briser les tabous",
+    excerpt: "La sécheresse vaginale et la baisse de libido ne sont pas une fatalité. Des solutions existent pour maintenir une vie intime épanouissante.",
+    readTime: "6 min",
+    date: "18 février 2026",
+    color: "#e8d0d0",
+  },
+  {
+    category: "Santé mentale",
+    tag: "Émotions",
+    title: "Anxiété et dépression à la ménopause : comprendre le lien hormonal",
+    excerpt: "Les fluctuations hormonales ont un impact réel sur la santé mentale. Reconnaître les symptômes et trouver de l'aide.",
+    readTime: "7 min",
+    date: "5 février 2026",
+    color: "#ddd0e8",
+  },
+  {
+    category: "Traitements",
+    tag: "Naturel",
+    title: "Plantes médicinales et ménopause : ce qui marche vraiment",
+    excerpt: "Actée à grappes, sauge officinale, trèfle rouge... Tour d'horizon des phytothérapies avec leurs preuves scientifiques.",
+    readTime: "8 min",
+    date: "22 janvier 2026",
+    color: "#d0e8d5",
+  },
+  {
+    category: "Bien-être",
+    tag: "Sport",
+    title: "Activité physique à la ménopause : quel sport choisir ?",
+    excerpt: "La musculation, le yoga, la natation — quel exercice est le plus bénéfique ? Les réponses selon votre profil et vos objectifs.",
+    readTime: "6 min",
+    date: "10 janvier 2026",
+    color: "#e8e0d0",
+  },
+];
+
+const categories = ["Tous", "Comprendre", "Traitements", "Bien-être", "Santé", "Sexualité", "Santé mentale"];
+---
+
+<Layout title="Articles" description="Tous nos articles sur la ménopause : comprendre, traiter, bien vivre. Informations fiables et bienveillantes.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="tag">Nos contenus</span>
+      <h1>Articles & Guides</h1>
+      <p>Des informations fiables, rédigées avec bienveillance, pour vous accompagner à chaque étape.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="filters">
+        {categories.map((cat, i) => (
+          <button class={`filter-btn ${i === 0 ? "active" : ""}`}>{cat}</button>
+        ))}
+      </div>
+
+      <div class="featured-article">
+        <div class="featured-content">
+          <span class="tag">À la une</span>
+          <h2>Ménopause précoce : quand cela arrive avant 40 ans</h2>
+          <p>La ménopause précoce touche environ 1% des femmes avant 40 ans et 0,1% avant 30 ans. Un diagnostic souvent tardif, un impact émotionnel et physique majeur — et des solutions qui existent. Ce guide complet vous accompagne de la découverte au traitement.</p>
+          <div class="featured-meta">
+            <span>🕐 12 min de lecture</span>
+            <span>📅 28 avril 2026</span>
+          </div>
+          <a href="#" class="btn btn-primary">Lire l'article complet</a>
+        </div>
+        <div class="featured-visual">
+          <div class="featured-icon">🌸</div>
+        </div>
+      </div>
+
+      <div class="articles-grid">
+        {articles.map(a => (
+          <article class="article-card">
+            <div class="article-thumb" style={`background: ${a.color};`}>
+              <span class="article-tag">{a.tag}</span>
+            </div>
+            <div class="article-body">
+              <span class="article-category">{a.category}</span>
+              <h3>{a.title}</h3>
+              <p>{a.excerpt}</p>
+              <div class="article-footer">
+                <div class="article-meta">
+                  <span>🕐 {a.readTime}</span>
+                  <span>{a.date}</span>
+                </div>
+                <a href="#" class="article-link">Lire →</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="container newsletter-inner">
+      <div>
+        <h2>Restez informée</h2>
+        <p>Recevez nos nouveaux articles chaque semaine, directement dans votre boîte mail. Pas de spam, juste de la bienveillance.</p>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="votre@email.fr" />
+        <button type="submit" class="btn btn-primary">S'abonner</button>
+      </form>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #f5e6ef 0%, #ede0f0 100%);
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  .page-hero h1 { font-size: 2.8rem; margin: 12px 0 16px; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; max-width: 520px; margin: 0 auto; }
+
+  .filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--rose-light);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--rose);
+    border-color: var(--rose);
+    color: var(--white);
+  }
+
+  .featured-article {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: center;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: var(--shadow);
+    margin-bottom: 56px;
+    border-left: 5px solid var(--rose);
+  }
+
+  .featured-content h2 { font-size: 1.9rem; margin: 12px 0 16px; }
+  .featured-content p { color: var(--text-light); margin-bottom: 20px; font-size: 1.02rem; }
+
+  .featured-meta {
+    display: flex;
+    gap: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+
+  .featured-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--rose-pale);
+    border-radius: 16px;
+    height: 220px;
+  }
+
+  .featured-icon { font-size: 7rem; }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .article-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.2s;
+  }
+
+  .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 36px rgba(140,94,131,0.18); }
+
+  .article-thumb {
+    height: 140px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    position: relative;
+  }
+
+  .article-tag {
+    background: rgba(255,255,255,0.9);
+    color: var(--mauve-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+  }
+
+  .article-body { padding: 24px; }
+
+  .article-category {
+    font-size: 0.78rem;
+    color: var(--rose);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .article-body h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.4; }
+  .article-body p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; }
+
+  .article-footer { display: flex; align-items: center; justify-content: space-between; }
+
+  .article-meta { display: flex; gap: 12px; color: var(--text-light); font-size: 0.8rem; }
+
+  .article-link {
+    color: var(--rose);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .article-link:hover { color: var(--mauve); }
+
+  .newsletter-section {
+    background: var(--rose-pale);
+    padding: 60px 0;
+    margin-top: 60px;
+  }
+
+  .newsletter-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .newsletter-inner h2 { font-size: 1.8rem; margin-bottom: 10px; }
+  .newsletter-inner p { color: var(--text-light); max-width: 440px; }
+
+  .newsletter-form { display: flex; gap: 12px; flex-shrink: 0; }
+
+  .newsletter-form input {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--rose-light);
+    font-size: 0.95rem;
+    font-family: 'Lato', sans-serif;
+    width: 260px;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-form input:focus { border-color: var(--rose); }
+
+  @media (max-width: 900px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .featured-article { grid-template-columns: 1fr; }
+    .featured-visual { display: none; }
+    .newsletter-inner { flex-direction: column; }
+    .newsletter-form { flex-direction: column; width: 100%; }
+    .newsletter-form input { width: 100%; }
+  }
+</style>

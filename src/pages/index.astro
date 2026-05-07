@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Accueil" description="Floraison — votre guide bienveillant sur la ménopause : symptômes, traitements, conseils de bien-être et ressources pour vivre cette transition sereinement.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="tag">Guide bienveillant</span>
+        <h1>La ménopause,<br/>une nouvelle <em>floraison</em></h1>
+        <p>La ménopause n'est pas une fin, c'est une transformation. Découvrez des informations fiables, des conseils pratiques et un espace de soutien pour traverser cette étape avec sérénité.</p>
+        <div class="hero-actions">
+          <a href="/articles" class="btn btn-primary">Lire nos articles</a>
+          <a href="/faq" class="btn btn-outline">Questions fréquentes</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>51 ans</strong>
+              <span>âge moyen de la ménopause en France</span>
+            </div>
+            <div class="stat">
+              <strong>~4 ans</strong>
+              <span>durée moyenne de la périménopause</span>
+            </div>
+            <div class="stat">
+              <strong>34+</strong>
+              <span>symptômes possibles identifiés</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>des femmes sont concernées</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,64L80,58.7C160,53,320,43,480,42.7C640,43,800,53,960,56C1120,59,1280,53,1360,50.7L1440,48L1440,80L0,80Z"/></svg>
+    </div>
+  </section>
+
+  <!-- Qu'est-ce que la ménopause ? -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Comprendre</span>
+        <h2>Qu'est-ce que la ménopause ?</h2>
+        <p>Un processus naturel qui marque la fin des cycles menstruels, généralement entre 45 et 55 ans.</p>
+      </div>
+      <div class="phases-grid">
+        <div class="phase-card">
+          <div class="phase-icon">🌱</div>
+          <h3>Périménopause</h3>
+          <p>La transition commence souvent 4 à 8 ans avant la ménopause. Les cycles deviennent irréguliers, les premiers symptômes apparaissent. Les niveaux d'estrogènes commencent à fluctuer.</p>
+        </div>
+        <div class="phase-card phase-card--active">
+          <div class="phase-icon">🌸</div>
+          <h3>Ménopause</h3>
+          <p>Diagnostiquée après 12 mois consécutifs sans règles. En France, l'âge moyen est de 51 ans. C'est un moment charnière, non une maladie — une transition naturelle.</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-icon">🌺</div>
+          <h3>Post-ménopause</h3>
+          <p>La vie après la ménopause, qui peut durer des décennies. Avec les bons soins, cette période peut être épanouissante, active et riche en nouvelles expériences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptômes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Symptômes</span>
+        <h2>Les signes à reconnaître</h2>
+        <p>Chaque femme vit la ménopause différemment. Voici les symptômes les plus courants.</p>
+      </div>
+      <div class="symptoms-grid">
+        {[
+          { icon: "🔥", title: "Bouffées de chaleur", desc: "Sensations soudaines de chaleur intense, souvent accompagnées de rougeurs et de sueurs, surtout la nuit." },
+          { icon: "😴", title: "Troubles du sommeil", desc: "Insomnies, réveils nocturnes fréquents, souvent liés aux sueurs nocturnes ou à l'anxiété." },
+          { icon: "💭", title: "Brouillard mental", desc: "Difficultés de concentration, trous de mémoire passagers — souvent appelé le « brain fog »." },
+          { icon: "💔", title: "Sautes d'humeur", desc: "Irritabilité, anxiété, tristesse : les fluctuations hormonales impactent l'équilibre émotionnel." },
+          { icon: "🦴", title: "Santé osseuse", desc: "La baisse des estrogènes accélère la perte osseuse, augmentant le risque d'ostéoporose." },
+          { icon: "💧", title: "Sécheresse vaginale", desc: "L'atrophie vaginale peut causer inconfort, douleurs et affecter la vie intime." },
+        ].map(s => (
+          <div class="symptom-card">
+            <span class="symptom-icon">{s.icon}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="/articles" class="btn btn-outline">En savoir plus sur les symptômes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traitements -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Solutions</span>
+        <h2>Des options pour mieux vivre</h2>
+        <p>Il existe des approches variées — médicales et naturelles — pour alléger les symptômes.</p>
+      </div>
+      <div class="treatments-grid">
+        <div class="treatment-item">
+          <div class="treatment-num">01</div>
+          <div>
+            <h3>Traitement hormonal de la ménopause (THM)</h3>
+            <p>Le traitement le plus efficace contre les bouffées de chaleur et la sécheresse vaginale. À discuter avec votre médecin selon votre profil de santé.</p>
+          </div>
+        </div>
+        <div class="treatment-item">
+          <div class="treatment-num">02</div>
+          <div>
+            <h3>Phytothérapie & plantes</h3>
+            <p>La sauge, le trèfle rouge, l'actée à grappes — des plantes aux propriétés reconnues pour atténuer certains symptômes de la ménopause.</p>
+          </div>
+        </div>
+        <div class="treatment-item">
+          <div class="treatment-num">03</div>
+          <div>
+            <h3>Hygiène de vie</h3>
+            <p>Alimentation équilibrée, activité physique régulière, gestion du stress : ces habitudes font une différence considérable sur la qualité de vie.</p>
+          </div>
+        </div>
+        <div class="treatment-item">
+          <div class="treatment-num">04</div>
+          <div>
+            <h3>Soutien psychologique</h3>
+            <p>Thérapie cognitivo-comportementale, méditation, groupes de soutien : prendre soin de sa santé mentale est tout aussi crucial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Témoignages</span>
+        <h2>Elles témoignent</h2>
+        <p>Des femmes partagent leur expérience pour briser le tabou et s'entraider.</p>
+      </div>
+      <div class="testimonials-grid">
+        {[
+          { name: "Marie, 53 ans", text: "Grâce aux informations que j'ai trouvées ici, j'ai pu avoir une conversation éclairée avec mon gynécologue. J'ai enfin compris ce qui se passait dans mon corps.", city: "Lyon" },
+          { name: "Sophie, 49 ans", text: "La périménopause m'a pris par surprise. Cet espace m'a aidée à comprendre que je n'étais pas seule et qu'il existait des solutions adaptées.", city: "Paris" },
+          { name: "Isabelle, 55 ans", text: "Post-ménopause depuis deux ans, je me sens plus libre que jamais. Bien informée et bien entourée, cette transition a été une vraie libération.", city: "Bordeaux" },
+        ].map(t => (
+          <div class="testimonial-card">
+            <div class="quote-icon">❝</div>
+            <p class="testimonial-text">{t.text}</p>
+            <div class="testimonial-author">
+              <strong>{t.name}</strong>
+              <span>{t.city}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Prête à prendre soin de vous ?</h2>
+      <p>Explorez nos ressources, lisez nos articles ou posez vos questions. Vous n'êtes pas seule dans cette aventure.</p>
+      <div class="cta-actions">
+        <a href="/ressources" class="btn btn-primary">Voir les ressources</a>
+        <a href="/contact" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--rose-pale) 0%, #f5e6ef 50%, #ede0f0 100%);
+    padding: 80px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "✿";
+    position: absolute;
+    top: -20px; right: -20px;
+    font-size: 300px;
+    color: rgba(196,116,138,0.07);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .hero-text h1 { font-size: 3rem; margin: 12px 0 20px; }
+  .hero-text h1 em { font-style: normal; color: var(--rose); }
+  .hero-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 32px; max-width: 480px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .hero-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 40px rgba(140,94,131,0.18);
+  }
+
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--rose); line-height: 1.2; }
+  .stat span { font-size: 0.85rem; color: var(--text-light); margin-top: 4px; display: block; }
+
+  .hero-wave { margin-bottom: -4px; }
+  .hero-wave svg { display: block; }
+
+  .phases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .phase-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    border: 2px solid var(--rose-light);
+  }
+
+  .phase-card--active {
+    background: var(--white);
+    border-color: var(--rose);
+    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+  }
+
+  .phase-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+  .phase-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+  .phase-card p { color: var(--text-light); font-size: 0.95rem; }
+
+  .symptoms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .symptom-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--rose-light);
+    transition: all 0.2s;
+  }
+
+  .symptom-card:hover { border-top-color: var(--rose); transform: translateY(-4px); }
+  .symptom-icon { font-size: 2rem; display: block; margin-bottom: 12px; }
+  .symptom-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .symptom-card p { color: var(--text-light); font-size: 0.9rem; }
+
+  .treatments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .treatment-item { display: flex; gap: 20px; align-items: flex-start; }
+
+  .treatment-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--rose-light);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+  }
+
+  .treatment-item h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .treatment-item p { color: var(--text-light); font-size: 0.93rem; }
+
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+  }
+
+  .quote-icon { font-size: 3rem; color: var(--rose-light); line-height: 1; margin-bottom: 16px; display: block; font-family: Georgia, serif; }
+  .testimonial-text { color: var(--text-light); font-size: 0.95rem; font-style: italic; margin-bottom: 20px; }
+  .testimonial-author strong { display: block; color: var(--mauve-dark); font-family: 'Playfair Display', serif; }
+  .testimonial-author span { font-size: 0.85rem; color: var(--rose); }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--rose) 0%, var(--mauve) 100%);
+    padding: 80px 0;
+  }
+
+  .cta-inner { text-align: center; color: var(--white); }
+  .cta-inner h2 { font-size: 2.4rem; color: var(--white); margin-bottom: 16px; }
+  .cta-inner p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .phases-grid, .symptoms-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .treatments-grid { grid-template-columns: 1fr; }
+  }
+</style>

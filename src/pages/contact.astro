@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Contactez l'équipe Floraison pour toute question sur la ménopause. Nous sommes là pour vous accompagner.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="tag">Nous écrire</span>
+      <h1>Contactez-nous</h1>
+      <p>Une question, un témoignage, une suggestion ? Nous lisons chaque message avec attention.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <div class="contact-info">
+        <h2>Nous sommes là pour vous</h2>
+        <p>Floraison est un espace bienveillant. Que vous ayez une question médicale à orienter, un témoignage à partager ou une suggestion d'article, n'hésitez pas à nous écrire.</p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <span class="info-icon">📬</span>
+            <div>
+              <strong>Réponse sous 48h</strong>
+              <p>Nous répondons à chaque message en semaine.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">🔒</span>
+            <div>
+              <strong>Confidentialité garantie</strong>
+              <p>Vos données restent strictement privées et ne sont jamais partagées.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">💌</span>
+            <div>
+              <strong>Bienveillance assurée</strong>
+              <p>Aucune question n'est trop simple ou trop intime. Nous sommes là sans jugement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reminder-box">
+          <strong>Rappel important</strong>
+          <p>Nous ne sommes pas médecins et ne pouvons pas remplacer un avis médical professionnel. Pour des symptômes préoccupants, consultez votre médecin ou gynécologue.</p>
+        </div>
+
+        <div class="social-links">
+          <p>Retrouvez-nous aussi sur :</p>
+          <div class="socials">
+            <a href="#" class="social-btn">Instagram</a>
+            <a href="#" class="social-btn">Facebook</a>
+            <a href="#" class="social-btn">Newsletter</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+          <h3>Envoyer un message</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom (optionnel)" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.fr" required />
+          </div>
+
+          <div class="form-group">
+            <label for="sujet">Sujet *</label>
+            <select id="sujet" name="sujet" required>
+              <option value="" disabled selected>Choisir un sujet…</option>
+              <option>Question sur les symptômes</option>
+              <option>Question sur les traitements</option>
+              <option>Partager un témoignage</option>
+              <option>Suggestion d'article</option>
+              <option>Signaler une erreur</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Décrivez votre question ou votre message…" required></textarea>
+          </div>
+
+          <div class="form-group form-check">
+            <label class="check-label">
+              <input type="checkbox" required />
+              <span>J'accepte que mes données soient utilisées pour répondre à ma demande, conformément à notre politique de confidentialité.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">Envoyer mon message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="faq-cta">
+    <div class="container faq-cta-inner">
+      <div>
+        <h3>Vous avez une question fréquente ?</h3>
+        <p>Consultez notre FAQ — votre réponse s'y trouve peut-être déjà !</p>
+      </div>
+      <a href="/faq" class="btn btn-outline">Voir la FAQ</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #ede0f0 0%, #f5e6ef 100%);
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  .page-hero h1 { font-size: 2.8rem; margin: 12px 0 16px; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .contact-info h2 { font-size: 1.7rem; margin-bottom: 16px; }
+  .contact-info > p { color: var(--text-light); margin-bottom: 36px; line-height: 1.7; }
+
+  .info-items { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
+
+  .info-item { display: flex; gap: 16px; align-items: flex-start; }
+  .info-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .info-item strong { display: block; color: var(--mauve-dark); margin-bottom: 4px; }
+  .info-item p { color: var(--text-light); font-size: 0.9rem; }
+
+  .reminder-box {
+    background: var(--rose-pale);
+    border-left: 4px solid var(--rose);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 20px 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .reminder-box strong { display: block; color: var(--rose); margin-bottom: 8px; font-size: 0.95rem; }
+  .reminder-box p { color: var(--text-light); font-size: 0.88rem; line-height: 1.65; }
+
+  .social-links p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 12px; }
+
+  .socials { display: flex; gap: 10px; }
+
+  .social-btn {
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: var(--white);
+    border: 2px solid var(--rose-light);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  .social-btn:hover {
+    background: var(--rose);
+    border-color: var(--rose);
+    color: var(--white);
+  }
+
+  /* Form */
+  .contact-form-wrapper {
+    position: sticky;
+    top: 90px;
+  }
+
+  .contact-form {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 32px rgba(140,94,131,0.12);
+  }
+
+  .contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--rose-light);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--mauve-dark);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--rose-light);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px rgba(196,116,138,0.12);
+    background: var(--white);
+  }
+
+  textarea { resize: vertical; min-height: 120px; }
+
+  .form-check label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  .form-check input { width: auto; margin-top: 3px; flex-shrink: 0; }
+  .form-check span { font-size: 0.82rem; color: var(--text-light); font-weight: 400; line-height: 1.5; }
+
+  .btn-submit {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    margin-top: 8px;
+    border-radius: 12px;
+  }
+
+  /* FAQ CTA */
+  .faq-cta {
+    background: var(--rose-pale);
+    padding: 48px 0;
+    margin-top: 60px;
+  }
+
+  .faq-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .faq-cta-inner h3 { font-size: 1.4rem; margin-bottom: 6px; }
+  .faq-cta-inner p { color: var(--text-light); }
+
+  @media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-form-wrapper { position: static; }
+    .form-row { grid-template-columns: 1fr; }
+    .faq-cta-inner { flex-direction: column; text-align: center; }
+  }
+</style>

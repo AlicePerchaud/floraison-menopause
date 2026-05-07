@@ -1,0 +1,298 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    category: "Définition & Diagnostic",
+    questions: [
+      {
+        q: "Comment sait-on qu'on est ménopausée ?",
+        a: "La ménopause est officiellement diagnostiquée après 12 mois consécutifs sans règles. Avant d'en arriver là, on traverse la périménopause, une phase de transition qui peut durer plusieurs années. Votre médecin peut également effectuer un dosage sanguin de la FSH (hormone folliculo-stimulante) pour confirmer la ménopause."
+      },
+      {
+        q: "Quel est l'âge moyen de la ménopause en France ?",
+        a: "En France, l'âge moyen de la ménopause est de 51 ans. Cependant, il est tout à fait normal de l'atteindre entre 45 et 55 ans. Avant 40 ans, on parle d'insuffisance ovarienne prématurée (IOP), qui nécessite une prise en charge spécifique."
+      },
+      {
+        q: "Peut-on tomber enceinte pendant la périménopause ?",
+        a: "Oui, c'est possible ! Tant que vous n'avez pas eu 12 mois consécutifs sans règles, une grossesse reste théoriquement possible. La contraception est donc recommandée jusqu'à la confirmation de la ménopause. Parlez-en à votre médecin pour déterminer la méthode la plus adaptée."
+      },
+      {
+        q: "La ménopause est-elle héréditaire ?",
+        a: "En partie, oui. L'âge de la ménopause est influencé par des facteurs génétiques. Si votre mère ou vos sœurs ont eu une ménopause précoce, vous avez plus de chances d'en connaître une également. D'autres facteurs comme le tabagisme, certaines chimiothérapies ou la chirurgie ovarienne peuvent également l'avancer."
+      },
+    ]
+  },
+  {
+    category: "Symptômes",
+    questions: [
+      {
+        q: "Pourquoi a-t-on des bouffées de chaleur ?",
+        a: "Les bouffées de chaleur sont causées par la baisse des estrogènes qui perturbe le thermostat du cerveau (l'hypothalamus). Ce dernier réagit à des variations de température infimes en déclenchant une transpiration excessive. Elles touchent environ 75% des femmes ménopausées et peuvent durer de quelques mois à plusieurs années."
+      },
+      {
+        q: "Le « brain fog » à la ménopause, c'est réel ?",
+        a: "Absolument. Les difficultés de concentration, les trous de mémoire et la sensation de « cerveau dans le coton » sont bien documentés et liés aux fluctuations hormonales. La bonne nouvelle : ces symptômes s'améliorent généralement avec le temps et ne signifient pas que vous développez une démence."
+      },
+      {
+        q: "Les douleurs articulaires sont-elles liées à la ménopause ?",
+        a: "Oui. Les estrogènes ont des propriétés anti-inflammatoires. Leur baisse peut entraîner des douleurs articulaires, une raideur matinale et des douleurs musculaires — souvent confondues avec de l'arthrite. L'exercice physique régulier et une alimentation anti-inflammatoire peuvent aider considérablement."
+      },
+      {
+        q: "Combien de temps durent les symptômes de la ménopause ?",
+        a: "La durée varie énormément d'une femme à l'autre. En moyenne, les bouffées de chaleur durent 7 à 9 ans. Certaines femmes en souffrent seulement quelques mois, d'autres plus de 10 ans. Les symptômes ont tendance à être les plus intenses pendant les premières années suivant la ménopause."
+      },
+    ]
+  },
+  {
+    category: "Traitements",
+    questions: [
+      {
+        q: "Le THM (traitement hormonal de la ménopause) est-il dangereux ?",
+        a: "Le THM a longtemps été stigmatisé à tort suite à une étude américaine de 2002 qui présentait des limites méthodologiques importantes. Les études actuelles montrent que pour les femmes de moins de 60 ans et dans les 10 ans suivant la ménopause, le THM est généralement sûr et très efficace. Il convient cependant d'évaluer individuellement les bénéfices et risques avec son médecin."
+      },
+      {
+        q: "Y a-t-il des alternatives naturelles au THM ?",
+        a: "Oui, plusieurs options ont une efficacité scientifiquement établie : l'actée à grappes (pour les bouffées de chaleur), la sauge officinale (pour la transpiration), le trèfle rouge (phyto-estrogènes), ainsi que certains médicaments non hormonaux comme la vénaflaxine. L'acupuncture, le yoga et la méditation de pleine conscience ont également montré des bénéfices pour certaines femmes."
+      },
+      {
+        q: "Faut-il prendre du calcium et de la vitamine D à la ménopause ?",
+        a: "C'est fortement recommandé. La baisse des estrogènes accélère la perte osseuse, et un apport suffisant en calcium (1000-1200 mg/jour) et en vitamine D (800-2000 UI/jour) est essentiel pour préserver la santé osseuse. Privilégiez les apports alimentaires (produits laitiers, légumes verts, poissons gras) et complétez si nécessaire avec un supplément après avis médical."
+      },
+      {
+        q: "L'exercice physique aide-t-il vraiment contre les symptômes ?",
+        a: "Oui, c'est l'une des interventions les mieux documentées. L'exercice régulier (30 min, 5 fois par semaine) améliore le sommeil, l'humeur, la santé cardiovasculaire et osseuse, et peut réduire la fréquence des bouffées de chaleur. La musculation est particulièrement bénéfique pour la densité osseuse, tandis que le yoga aide à gérer le stress et les bouffées de chaleur."
+      },
+    ]
+  },
+  {
+    category: "Vie quotidienne",
+    questions: [
+      {
+        q: "Comment gérer les bouffées de chaleur au travail ?",
+        a: "Quelques stratégies pratiques : portez des vêtements en couches superposées pour pouvoir vous découvrir rapidement, optez pour des matières naturelles (coton, lin), gardez un mini-ventilateur de bureau, buvez de l'eau fraîche régulièrement, repérez et évitez vos déclencheurs (café, alcool, épices, stress) et parlez-en à votre employeur si le confort au travail est affecté."
+      },
+      {
+        q: "La ménopause affecte-t-elle la sexualité ?",
+        a: "Elle peut l'affecter, mais pas forcément négativement. La sécheresse vaginale et la baisse de libido sont fréquentes mais traitables. Des lubrifiants, des hydratants vaginaux, ou un traitement hormonal local peuvent résoudre le problème de sécheresse. Pour la libido, l'exploration de nouvelles formes d'intimité, la thérapie de couple ou certains traitements médicaux peuvent aider. Beaucoup de femmes rapportent une vie intime épanouissante après la ménopause."
+      },
+      {
+        q: "Faut-il adapter son alimentation à la ménopause ?",
+        a: "Oui, une alimentation adaptée fait vraiment la différence. Privilégiez : les aliments riches en calcium (produits laitiers, sardines, tofu, brocoli), les phyto-estrogènes (soja, graines de lin, légumineuses), les oméga-3 (poissons gras, noix), les fruits et légumes colorés. Réduisez l'alcool, la caféine et les aliments ultratransformés qui peuvent aggraver les bouffées de chaleur et la prise de poids."
+      },
+    ]
+  },
+];
+---
+
+<Layout title="FAQ" description="Toutes les réponses à vos questions sur la ménopause : symptômes, traitements, vie quotidienne. Informations claires et fiables.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="tag">Questions & Réponses</span>
+      <h1>Foire aux questions</h1>
+      <p>Les réponses claires aux questions que vous vous posez sur la ménopause.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container faq-layout">
+
+      <aside class="faq-nav">
+        <p class="nav-label">Catégories</p>
+        {faqs.map(f => (
+          <a href={`#${f.category.toLowerCase().replace(/[^a-z]/g, '-')}`} class="faq-nav-link">
+            {f.category}
+          </a>
+        ))}
+        <div class="ask-box">
+          <p>Vous n'avez pas trouvé votre réponse ?</p>
+          <a href="/contact" class="btn btn-primary" style="font-size:0.9rem;padding:10px 20px;">Poser une question</a>
+        </div>
+      </aside>
+
+      <div class="faq-content">
+        {faqs.map(section => (
+          <div class="faq-section" id={section.category.toLowerCase().replace(/[^a-z]/g, '-')}>
+            <h2 class="faq-section-title">{section.category}</h2>
+            <div class="accordion">
+              {section.questions.map((item, i) => (
+                <details class="faq-item">
+                  <summary class="faq-question">
+                    <span>{item.q}</span>
+                    <span class="faq-icon">+</span>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>{item.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div class="disclaimer-box">
+          <span class="disclaimer-icon">ℹ️</span>
+          <div>
+            <strong>Information importante</strong>
+            <p>Les informations de ce site sont à titre éducatif uniquement et ne remplacent pas l'avis d'un professionnel de santé. Consultez toujours votre médecin ou gynécologue pour un diagnostic et un traitement personnalisé.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #ede0f0 0%, #f5e6ef 100%);
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  .page-hero h1 { font-size: 2.8rem; margin: 12px 0 16px; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .faq-nav {
+    position: sticky;
+    top: 90px;
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  .faq-nav-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .faq-nav-link:hover {
+    color: var(--rose);
+    background: var(--rose-pale);
+    border-left-color: var(--rose);
+  }
+
+  .ask-box {
+    margin-top: 32px;
+    background: var(--rose-pale);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .ask-box p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .faq-section { margin-bottom: 52px; }
+
+  .faq-section-title {
+    font-size: 1.5rem;
+    color: var(--mauve-dark);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--rose-light);
+  }
+
+  .faq-item {
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(140,94,131,0.07);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item[open] { box-shadow: var(--shadow); }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--mauve-dark);
+    gap: 16px;
+    list-style: none;
+    transition: background 0.2s;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question:hover { background: var(--rose-pale); }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--rose-pale);
+    color: var(--rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  details[open] .faq-icon {
+    background: var(--rose);
+    color: var(--white);
+    content: "−";
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px;
+    color: var(--text-light);
+    font-size: 0.97rem;
+    line-height: 1.75;
+    border-top: 1px solid var(--rose-light);
+    padding-top: 18px;
+  }
+
+  .disclaimer-box {
+    display: flex;
+    gap: 16px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 16px;
+  }
+
+  .disclaimer-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .disclaimer-box strong { display: block; color: #7a5f00; margin-bottom: 6px; }
+  .disclaimer-box p { color: #7a6f3a; font-size: 0.9rem; }
+
+  @media (max-width: 768px) {
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-nav { position: static; }
+  }
+</style>

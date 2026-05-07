@@ -1,0 +1,268 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const ressources = [
+  {
+    category: "Associations & Organisations",
+    icon: "🏛️",
+    items: [
+      { name: "Collège National des Gynécologues et Obstétriciens Français (CNGOF)", desc: "Référence médicale française sur la ménopause, recommandations officielles et guides pour les patientes.", type: "officiel" },
+      { name: "Groupe d'Étude sur la Ménopause et le Vieillissement (GEMVI)", desc: "Société savante française dédiée à la ménopause. Publications scientifiques et information pour les femmes.", type: "officiel" },
+      { name: "Menopause Support (UK)", desc: "Organisation internationale de soutien aux femmes ménopausées. Ressources, forums et témoignages.", type: "soutien" },
+      { name: "Institut National du Cancer (INCa)", desc: "Informations sur le THM et les risques de cancer, avec les données les plus récentes.", type: "officiel" },
+    ]
+  },
+  {
+    category: "Livres recommandés",
+    icon: "📚",
+    items: [
+      { name: "La Ménopause – Dr Geneviève Plu-Bureau", desc: "Un guide médical complet et accessible, par une référence française en gynécologie endocrinienne.", type: "livre" },
+      { name: "Ménopause : les solutions naturelles – Dr Sylvie Hampikian", desc: "Approche intégrative mêlant médecine conventionnelle et médecines complémentaires.", type: "livre" },
+      { name: "The Menopause Book – Dr Pat Wingert", desc: "Référence internationale complète sur tous les aspects de la ménopause (en anglais).", type: "livre" },
+      { name: "La Révolution ménopause – Dr Ménard", desc: "Un regard positif et féministe sur cette période de transition souvent mal appréhendée.", type: "livre" },
+    ]
+  },
+  {
+    category: "Applications mobiles",
+    icon: "📱",
+    items: [
+      { name: "Balance – Menopause Support", desc: "Application de suivi des symptômes et d'informations sur la ménopause. Très populaire au Royaume-Uni.", type: "app" },
+      { name: "Clue", desc: "Application de suivi du cycle menstruel qui accompagne aussi la périménopause.", type: "app" },
+      { name: "Flo", desc: "Suivi des règles et informations santé féminine, avec section dédiée à la ménopause.", type: "app" },
+      { name: "Calm / Headspace", desc: "Applications de méditation et pleine conscience, particulièrement utiles contre le stress et les insomnies liés à la ménopause.", type: "app" },
+    ]
+  },
+  {
+    category: "Podcasts",
+    icon: "🎙️",
+    items: [
+      { name: "The Menopause Podcast", desc: "Animé par une gynécologue, ce podcast anglophone décortique chaque aspect de la ménopause avec humour et science.", type: "podcast" },
+      { name: "La Santé D'abord", desc: "Podcast français abordant régulièrement des sujets liés à la santé féminine dont la ménopause.", type: "podcast" },
+      { name: "Femmes de 50 ans", desc: "Témoignages et conseils de femmes qui partagent leur expérience de la ménopause.", type: "podcast" },
+    ]
+  },
+];
+
+const typeColors: Record<string, string> = {
+  officiel: "#dbeafe",
+  soutien: "#fce7f3",
+  livre: "#e0f2fe",
+  app: "#d1fae5",
+  podcast: "#ede9fe",
+};
+
+const typeLabels: Record<string, string> = {
+  officiel: "Officiel",
+  soutien: "Soutien",
+  livre: "Livre",
+  app: "Application",
+  podcast: "Podcast",
+};
+
+const typeTextColors: Record<string, string> = {
+  officiel: "#1e40af",
+  soutien: "#9d174d",
+  livre: "#0369a1",
+  app: "#065f46",
+  podcast: "#5b21b6",
+};
+---
+
+<Layout title="Ressources" description="Ressources fiables sur la ménopause : associations, livres, applications, podcasts et outils pour mieux vivre cette transition.">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="tag">Ressources</span>
+      <h1>Outils & Ressources</h1>
+      <p>Une sélection curatée des meilleures ressources pour vous accompagner avant, pendant et après la ménopause.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="checklist-banner">
+        <div class="checklist-text">
+          <h3>📋 Mon carnet de suivi ménopause</h3>
+          <p>Téléchargez notre guide gratuit pour suivre vos symptômes et préparer vos consultations médicales.</p>
+        </div>
+        <a href="#" class="btn btn-primary">Télécharger gratuitement</a>
+      </div>
+
+      {ressources.map(section => (
+        <div class="resource-section">
+          <div class="resource-section-header">
+            <span class="section-icon">{section.icon}</span>
+            <h2>{section.category}</h2>
+          </div>
+          <div class="resource-grid">
+            {section.items.map(item => (
+              <div class="resource-card">
+                <div class="resource-card-top">
+                  <h3>{item.name}</h3>
+                  <span
+                    class="resource-type"
+                    style={`background: ${typeColors[item.type]}; color: ${typeTextColors[item.type]};`}
+                  >
+                    {typeLabels[item.type]}
+                  </span>
+                </div>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <section class="tips-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Conseils pratiques</span>
+        <h2>Préparer sa consultation médicale</h2>
+        <p>Maximisez l'efficacité de votre rendez-vous chez le médecin ou le gynécologue.</p>
+      </div>
+      <div class="tips-grid">
+        {[
+          { num: "01", title: "Notez vos symptômes", desc: "Tenez un journal pendant 2 semaines avant la consultation : fréquence des bouffées de chaleur, qualité du sommeil, humeur, douleurs." },
+          { num: "02", title: "Listez vos questions", desc: "Préparez vos questions à l'avance. Abordez sans tabou les sujets intimes : libido, sécheresse vaginale, relations." },
+          { num: "03", title: "Apportez vos antécédents", desc: "Historique familial de cancer du sein, ostéoporose ou maladies cardiovasculaires. Cela aide à évaluer les options de traitement." },
+          { num: "04", title: "Parlez du THM", desc: "N'hésitez pas à aborder le traitement hormonal, même si vous n'y êtes pas favorable a priori. Informez-vous sur toutes les options disponibles." },
+        ].map(tip => (
+          <div class="tip-card">
+            <div class="tip-num">{tip.num}</div>
+            <h3>{tip.title}</h3>
+            <p>{tip.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #f5e6ef 0%, #ede0f0 100%);
+    padding: 60px 0 50px;
+    text-align: center;
+  }
+
+  .page-hero h1 { font-size: 2.8rem; margin: 12px 0 16px; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; max-width: 520px; margin: 0 auto; }
+
+  .checklist-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background: linear-gradient(135deg, var(--rose) 0%, var(--mauve) 100%);
+    border-radius: 16px;
+    padding: 36px 48px;
+    margin-bottom: 60px;
+    color: var(--white);
+  }
+
+  .checklist-text h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 8px; }
+  .checklist-text p { opacity: 0.85; font-size: 0.97rem; }
+
+  .resource-section { margin-bottom: 56px; }
+
+  .resource-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--rose-light);
+  }
+
+  .section-icon { font-size: 2rem; }
+
+  .resource-section-header h2 { font-size: 1.6rem; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .resource-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+
+  .resource-card:hover { transform: translateY(-3px); }
+
+  .resource-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .resource-card h3 {
+    font-size: 1rem;
+    color: var(--mauve-dark);
+    line-height: 1.4;
+  }
+
+  .resource-type {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .resource-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; }
+
+  .tips-section {
+    background: var(--white);
+    padding: 72px 0;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .tip-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border-top: 3px solid var(--rose);
+  }
+
+  .tip-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--rose-light);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .tip-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .tip-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.65; }
+
+  @media (max-width: 900px) {
+    .checklist-banner { flex-direction: column; text-align: center; padding: 32px 24px; }
+    .resource-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+  }
+</style>
