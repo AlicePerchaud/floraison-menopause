@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Message envoyé" description="Votre message a bien été reçu. L'équipe Floraison vous répondra sous 48h.">
+  <section class="merci-section">
+    <div class="container merci-inner">
+      <div class="merci-icon">✿</div>
+      <h1>Message bien reçu !</h1>
+      <p>Merci de nous avoir écrit. Nous vous répondrons sous 48h à l'adresse email indiquée.</p>
+      <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .merci-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .merci-inner {
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  .merci-icon {
+    font-size: 5rem;
+    color: var(--rose);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 36px;
+  }
+</style>
