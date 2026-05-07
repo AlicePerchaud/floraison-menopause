@@ -83,9 +83,29 @@ const faqs = [
     ]
   },
 ];
+
+const BASE = "https://superb-mermaid-6a5c2a.netlify.app";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "FAQ Ménopause — Questions fréquentes",
+  "url": `${BASE}/faq`,
+  "inLanguage": "fr-FR",
+  "mainEntity": faqs.flatMap(section =>
+    section.questions.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  )
+};
 ---
 
-<Layout title="FAQ" description="Toutes les réponses à vos questions sur la ménopause : symptômes, traitements, vie quotidienne. Informations claires et fiables.">
+<Layout title="FAQ" description="Toutes les réponses à vos questions sur la ménopause : symptômes, traitements, vie quotidienne. Informations claires et fiables." schema={schema}>
 
   <section class="page-hero">
     <div class="container">

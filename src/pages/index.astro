@@ -1,8 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const BASE = "https://superb-mermaid-6a5c2a.netlify.app";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Floraison",
+    "url": BASE,
+    "description": "Guide bienveillant sur la ménopause : symptômes, traitements, conseils et ressources.",
+    "inLanguage": "fr-FR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": `${BASE}/articles?q={search_term_string}` },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Floraison",
+    "url": BASE,
+    "logo": `${BASE}/favicon.svg`,
+    "description": "Espace bienveillant d'information et de soutien autour de la ménopause.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": "French",
+      "url": `${BASE}/contact`
+    },
+    "sameAs": []
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Floraison — Guide sur la ménopause",
+    "url": BASE,
+    "description": "Informations médicales et conseils de bien-être sur la ménopause : symptômes, traitements, périménopause et post-ménopause.",
+    "inLanguage": "fr-FR",
+    "audience": { "@type": "MedicalAudience", "audienceType": "patient" },
+    "medicalAudience": { "@type": "MedicalAudience", "audienceType": "patient" },
+    "about": { "@type": "MedicalCondition", "name": "Ménopause" }
+  }
+];
 ---
 
-<Layout title="Accueil" description="Floraison — votre guide bienveillant sur la ménopause : symptômes, traitements, conseils de bien-être et ressources pour vivre cette transition sereinement.">
+<Layout title="Accueil" description="Floraison — votre guide bienveillant sur la ménopause : symptômes, traitements, conseils de bien-être et ressources pour vivre cette transition sereinement." schema={schema}>
 
   <!-- Hero -->
   <section class="hero">

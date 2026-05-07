@@ -1,8 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const BASE = "https://superb-mermaid-6a5c2a.netlify.app";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact — Floraison",
+  "description": "Contactez l'équipe Floraison pour toute question sur la ménopause.",
+  "url": `${BASE}/contact`,
+  "inLanguage": "fr-FR",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Floraison",
+    "url": BASE,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": "French",
+      "url": `${BASE}/contact`
+    }
+  }
+};
 ---
 
-<Layout title="Contact" description="Contactez l'équipe Floraison pour toute question sur la ménopause. Nous sommes là pour vous accompagner.">
+<Layout title="Contact" description="Contactez l'équipe Floraison pour toute question sur la ménopause. Nous sommes là pour vous accompagner." schema={schema}>
 
   <section class="page-hero">
     <div class="container">

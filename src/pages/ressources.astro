@@ -66,9 +66,33 @@ const typeTextColors: Record<string, string> = {
   app: "#065f46",
   podcast: "#5b21b6",
 };
+
+const BASE = "https://superb-mermaid-6a5c2a.netlify.app";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ressources sur la ménopause — Floraison",
+  "description": "Sélection de ressources fiables sur la ménopause : associations, livres, applications et podcasts.",
+  "url": `${BASE}/ressources`,
+  "inLanguage": "fr-FR",
+  "about": { "@type": "MedicalCondition", "name": "Ménopause" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Ressources ménopause",
+    "itemListElement": ressources.flatMap((section, si) =>
+      section.items.map((item, ii) => ({
+        "@type": "ListItem",
+        "position": si * 10 + ii + 1,
+        "name": item.name,
+        "description": item.desc
+      }))
+    )
+  }
+};
 ---
 
-<Layout title="Ressources" description="Ressources fiables sur la ménopause : associations, livres, applications, podcasts et outils pour mieux vivre cette transition.">
+<Layout title="Ressources" description="Ressources fiables sur la ménopause : associations, livres, applications, podcasts et outils pour mieux vivre cette transition." schema={schema}>
 
   <section class="page-hero">
     <div class="container">
